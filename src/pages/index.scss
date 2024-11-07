@@ -67,6 +67,26 @@ body {
   transform: translateX(0);
 }
 
+.shimmer {
+  color: var(--brown-850);
+  -webkit-mask: linear-gradient(
+      -80deg,
+      #000000 30%,
+      rgba(0, 0, 0, 0.642),
+      #000 60%
+    )
+    right/300% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 4s infinite;
+  font-size: 50px;
+}
+
+@keyframes shimmer {
+  100% {
+    -webkit-mask-position: left;
+  }
+}
+
 .navbar-fixed {
   pointer-events: none;
   position: fixed;
