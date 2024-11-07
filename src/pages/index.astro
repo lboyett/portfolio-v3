@@ -36,11 +36,11 @@ import exitmapScreenshot from "../assets/exitmap.webp";
     </div>
   </div>
   <div class="about-page">
-    <div class="mobile-title">I'm Luke</div>
-    <div class="img-container">
+    <div class="mobile-title scroll-hidden">I'm Luke</div>
+    <div class="img-container scroll-hidden">
       <img src={luke.src} alt="" />
     </div>
-    <div class="text-container">
+    <div class="text-container scroll-hidden">
       <div class="title">I'm Luke.</div>
       <p>
         I'm a 27 year old full stack web developer and designer from Birmingham,
@@ -67,7 +67,7 @@ import exitmapScreenshot from "../assets/exitmap.webp";
   </div>
 
   <div class="projects-page">
-    <div class="djangular-container">
+    <div class="djangular-container scroll-hidden">
       <div class="text-container">
         <div class="logo-container">
           <img src={djangularLogo.src} alt="" />
@@ -97,7 +97,7 @@ import exitmapScreenshot from "../assets/exitmap.webp";
       </div>
     </div>
     <div class="separator"></div>
-    <div class="exitmap-container">
+    <div class="exitmap-container scroll-hidden">
       <div class="img-container">
         <img src={exitmapScreenshot.src} alt="" />
       </div>
@@ -122,7 +122,7 @@ import exitmapScreenshot from "../assets/exitmap.webp";
       </div>
     </div>
   </div>
-  <div class="contact-page">
+  <div class="contact-page scroll-hidden">
     <div class="grow"></div>
     <div class="thanks">Thanks for the message!</div>
     <h2>Send me a message</h2>
@@ -244,7 +244,23 @@ import exitmapScreenshot from "../assets/exitmap.webp";
     });
   }
 
+  function addScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".scroll-hidden");
+    hiddenElements.forEach((el) => {
+      observer.observe(el);
+    });
+  }
+
   handleFormSubmit();
   addEventListeners();
   makeNavbarSticky();
+  addScrollAnimations();
 </script>

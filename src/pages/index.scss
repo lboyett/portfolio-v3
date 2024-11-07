@@ -55,6 +55,18 @@ body {
   font-family: "montserrat", sans-serif;
 }
 
+.scroll-hidden {
+  opacity: 0;
+  transform: translateX(-5%);
+  transition: all 0.8s ease-in-out;
+  transition-delay: 0.3s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .navbar-fixed {
   pointer-events: none;
   position: fixed;
