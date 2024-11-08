@@ -5,10 +5,20 @@ import luke from "../assets/luke.webp";
 import djangularScreenshot from "../assets/djangular.webp";
 import djangularLogo from "../assets/djangular.svg";
 import exitmapScreenshot from "../assets/exitmap.webp";
+import github from "../assets/github.svg";
+import linkedin from "../assets/linkedin.svg";
 ---
 
 <Layout
   ><div class="landing-page">
+    <div class="accounts">
+      <a href="https://github.com/lboyett" target="_blank"
+        ><img src={github.src} alt="" class="github" /></a
+      ><a
+        href="https://www.linkedin.com/in/daniel-boyett-112b4125b/"
+        target="_blank"><img src={linkedin.src} alt="" class="github" /></a
+      >
+    </div>
     <div class="navbar-fixed">
       <span class="material-symbols-outlined">menu</span>
       <ul>
@@ -228,6 +238,17 @@ import exitmapScreenshot from "../assets/exitmap.webp";
     const textarea = document.querySelector("textarea");
     textarea?.addEventListener("change", () => {
       error?.classList.remove("submit-fail");
+    });
+
+    const menuIcon = document.querySelector(
+      ".navbar .material-symbols-outlined",
+    );
+    menuIcon?.addEventListener("click", () => {
+      const navbar = document.querySelector(".navbar");
+      navbar?.classList.add(":hover");
+      window.addEventListener("click", () => {
+        navbar?.classList.remove(":hover");
+      });
     });
   }
 

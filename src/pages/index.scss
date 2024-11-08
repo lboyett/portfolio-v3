@@ -153,6 +153,22 @@ body {
   width: 100%;
   font-family: "garamond", serif;
 
+  .accounts {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 6px;
+    a {
+      .github {
+        height: 24px;
+        width: 24px;
+      }
+      .linkedin {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
   .navbar {
     width: 100%;
     display: flex;
@@ -164,7 +180,7 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 24px;
+      margin: 12px 24px 24px 24px;
       border-bottom: 1px solid var(--brown-850);
       h1 {
         font-size: 72px;
